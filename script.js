@@ -2,7 +2,8 @@
 //Récupération des touches de la calculette et transformation en tableau:
 //let btnCalc = document.querySelectorAll('.btn');
 let btnCalc = [...document.querySelectorAll('.btn')];
-console.log(btnCalc);
+//console.log(btnCalc);
+
 //let btnCalc = document.getElementsByClassName('btn');
 //console.log(btnCalc);
 //let tab1 = Array.from(btnCalc);
@@ -12,17 +13,17 @@ console.log(btnCalc);
 
 //récupération de la data-key attribuée au bouton:
 let listKeycode = btnCalc.map(bouton => bouton.dataset.key);
-console.log(listKeycode);
+//console.log(listKeycode);
 
 let screen = document.querySelector('.ecran');
 //const ecran = document.getElementsByClassName('ecran');
-console.log(screen);
+//console.log(screen);
 
 //évènement sur la touche et transformation du type number en string 
 document.addEventListener('keydown', (e) => {
-    const valeur = e.key.toString();
+    const valeur = e.keyCode.toString();
     calculer(valeur);
-    //console.log(valeur);
+    //console.log(e);
 });
 
 //évènement au click on met dans une variable valeur au click la dataset définie
@@ -30,8 +31,10 @@ document.addEventListener('click', (e) => {
     const valeur = e.target.dataset.key;
     calculer(valeur);
     //on vérifie ici son type
-    //console.log(valeur, typeof valeur)
-})
+    //console.log(e, typeof valeur)
+});
+
+//console.clear();
 
 let calculer = (valeur) => {
     if(listKeycode.includes(valeur)){
@@ -52,7 +55,11 @@ let calculer = (valeur) => {
     }
 }
 
+
+
 window.addEventListener('error', (e)=> {
     alert('Une erreur est survenue : '+ e.message);
 })
+
+
 

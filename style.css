@@ -90,7 +90,7 @@ h1{
     grid-template-columns: repeat(4, 50px);
     gap: 5px;
     border-radius: 5px;
-   
+
 }
 
 .btn{
@@ -121,4 +121,8 @@ button[data-key="13"]{
     background-color: brown;
     font-weight: bold;
     font-size:35px;
+}
+
+textarea{
+	text-align: right;
 }
